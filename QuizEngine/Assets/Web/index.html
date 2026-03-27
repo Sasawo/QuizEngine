@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Unity Controller</h2>
+
+<button onclick="sendAction('User1','User','jump')">Jump</button>
+
+<script>
+    let ws = new WebSocket("ws://10.128.52.94:8080/actions");
+
+    ws.onopen = () => console.log("Connected!");
+
+    function sendAction(user, role, action) {
+        ws.send(JSON.stringify({ user, role, action }));
+    }
+</script>
+
+</body>
+</html>
