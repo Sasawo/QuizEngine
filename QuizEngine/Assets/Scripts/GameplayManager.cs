@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -56,9 +57,14 @@ public class GameplayManager : MonoBehaviour
 			CurrentQuestion = null;
 			Continue = false;
 		}
-		else
+		else if (!QuestionList.Where(x => x.Where(y => y.Valid).Any()).Any())
 		{
+			++GameManager.Instance.RoundNumber;
+			ServerPersistor.Instance.ReInitGameContent();
+			SetupUI.Instance.Setup();
 			Continue = false;
 		}
+
+		Continue = false;
 	}
 }

@@ -20,6 +20,8 @@ public class ServerPersistor : MonoBehaviour
 	private WebSocketServer wssv;
 	private Process process;
 	[SerializeField] TMP_Text ipShow = null;
+	private int port;
+	private string path;
 
 	void Awake()
 	{
@@ -34,18 +36,18 @@ public class ServerPersistor : MonoBehaviour
 	}
 	void Start()
 	{
-		int port = GetFreePort();
+		port = GetFreePort();
 		wssv = new WebSocketServer(IPAddress.Any, port);
 		wssv.AddWebSocketService<UserActions>("/actions");
 		wssv.Start();
 		UnityEngine.Debug.Log($"Server started on ws://<IP>:{port}/actions");
 
-		string path = @"C:\Users\sawas\OneDrive\Desktop\Folders\Resources\Repositories\QuizEngine\QuizEngine\Assets\Web";
+		path = @"C:\Users\sawas\OneDrive\Desktop\Folders\Resources\Repositories\QuizEngine\QuizEngine\Assets\Web";
 
-		InitTemplate("index", path, port);
-		InitTemplate("user", path, port);
-		InitTemplate("admin", path, port);
-		InitGameContent("adminGame", path, port);
+		InitTemplate("index");
+		InitTemplate("user");
+		InitTemplate("admin");
+		InitGameContent("adminGame");
 
 		process = new Process();
 		process.StartInfo.FileName = "python";
@@ -62,25 +64,29 @@ public class ServerPersistor : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
 	}
-	private void InitTemplate(string name, string path, int port)
+	private void InitTemplate(string name)
 	{
 		string content = System.IO.File.ReadAllText($@"{path}\templates\template-{name}.html");
 		content = content.Replace("<IP_REPLACE>", $"{GetActiveIPv4()}:{port}");
 
 		System.IO.File.WriteAllText($@"{path}\{name}.html", content);
 	}
-	private void InitGameContent(string name, string path, int port)
+	public void ReInitGameContent()
+	{
+		InitGameContent("adminGame");
+	}
+	private void InitGameContent(string name)
 	{
 		string replacing = "";
-		for (int i = 0; i < GameManager.Instance.GameData.Rounds[0].Categories.Count; ++i)
+		for (int i = 0; i < GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories.Count; ++i)
 		{
 			replacing += $"<div id =\"{i}\" style =\"display:flex;flex-direction:row;gap:2vw;\">\n";
 
-			replacing += $"<input id=\"category\" type =\"button\" value =\"{GameManager.Instance.GameData.Rounds[0].Categories[i].Name}\" class=\"button altButton\">\n";
-			for (int j = 0; j < GameManager.Instance.GameData.Rounds[0].Categories[i].Questions.Count; ++j)
+			replacing += $"<input id=\"category\" type =\"button\" value =\"{GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Name}\" class=\"button altButton\">\n";
+			for (int j = 0; j < GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions.Count; ++j)
 				replacing += $"<input id=\"{j}\" type =\"button\" value =\"{(j + 1) * 1000}\" class=\"button question altButton\">\n";
 
-			replacing += $"<input id=\"{GameManager.Instance.GameData.Rounds[0].Categories[i].Questions.Count}\" type =\"button\" value =\"Bonus\" class=\"button question altButton\">\n";
+			replacing += $"<input id=\"{GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions.Count}\" type =\"button\" value =\"Bonus\" class=\"button question altButton\">\n";
 			replacing += "</div>\n";
 		}
 

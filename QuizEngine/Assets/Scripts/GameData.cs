@@ -4,6 +4,7 @@ using System.IO;
 using TMPro;
 using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
 public abstract class Question
 {
 	public enum QType { TEXT, IMAGE, AUDIO };
@@ -80,6 +81,9 @@ public class TextQuestion : Question
 
 public class ImageQuestion : Question
 {
+	public Texture2D Texture;
+	public Coroutine Coroutine;
+	public bool CoroutinePaused = false;
 	public ImageQuestion(string content, string answer, int pts) : base(content, answer, pts)
 	{
 		Type = QType.IMAGE;
@@ -95,10 +99,30 @@ public class ImageQuestion : Question
 
 		GameObject canvas = GameObject.Find("ImageQuestion");
 		canvas.transform.Find("AnswerText").GetComponent<TMP_Text>().text = "";
+		canvas.transform.Find("Mask").GetComponent<RectMask2D>().padding = new(0, 0, 1262.52f, 0);
+
+		GameManager.Instance.LoadImage(Content, this);
 	}
-	public override void Show() { }
-	public override void Stop() { }
-	public override void ShowAnswer() { }
+	public override void Show()
+	{
+		if (CoroutinePaused)
+		{
+			CoroutinePaused = false;
+			return;
+		}
+
+		GameObject image = GameObject.Find("ImageQuestion").transform.Find("Mask").gameObject;
+		image.transform.Find("QuestionImage").GetComponent<RawImage>().texture = Texture;
+		GameManager.Instance.ShowImage(image, this);
+	}
+	public override void Stop()
+	{
+		CoroutinePaused = true;
+	}
+	public override void ShowAnswer()
+	{
+		GameObject.Find("ImageQuestion").transform.Find("AnswerText").GetComponent<TMP_Text>().text = Answer;
+	}
 	public override void Continue()
 	{
 		GameObject.Find("MainCamera").tag = "MainCamera";

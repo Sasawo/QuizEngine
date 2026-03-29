@@ -1,10 +1,12 @@
 using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,6 +68,35 @@ public class GameManager : MonoBehaviour
 				AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
 				self.AudioClip = clip;
 			}
+		}
+	}
+	public void LoadImage(string path, ImageQuestion self)
+	{
+		if (!File.Exists(path)) return;
+
+		self.Texture = new Texture2D(2, 2);
+		self.Texture.LoadImage(File.ReadAllBytes(path));
+	}
+	public void ShowImage(GameObject mask, ImageQuestion self)
+	{
+		self.Coroutine = StartCoroutine(ShowImageCoroutine(mask.GetComponent<RectMask2D>(), self));
+	}
+	public void StopImage(Coroutine co)
+	{
+		if (co != null)
+			StopCoroutine(co);
+	}
+	private IEnumerator ShowImageCoroutine(RectMask2D mask, ImageQuestion self)
+	{
+		float padding = mask.padding.z / 30;
+
+		while (mask.padding.z > 0)
+		{
+			yield return new WaitWhile(() => self.CoroutinePaused);
+
+			mask.padding = new(0, 0, mask.padding.z - padding, 0);
+
+			yield return new WaitForSeconds(0.3f);
 		}
 	}
 }
