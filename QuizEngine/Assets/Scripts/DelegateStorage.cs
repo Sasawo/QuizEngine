@@ -9,7 +9,6 @@ public class DelegateStorage : MonoBehaviour
 	[SerializeField] Sprite badStatus;
 	public void CheckInputFile(string path)
     {
-        print(path);
         if (File.Exists(path) && path.EndsWith(".json")) fileStatus.sprite = goodStatus;
         else if (path != "") fileStatus.sprite = badStatus;
         else fileStatus.sprite = null;
@@ -20,7 +19,7 @@ public class DelegateStorage : MonoBehaviour
 		if (File.Exists(path) && path.EndsWith(".json"))
         {
             GameManager.Instance.GameData = new(path);
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("UserSetup");
         }
     }
 }

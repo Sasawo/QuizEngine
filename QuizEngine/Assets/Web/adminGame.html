@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  background-color: #660000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background:radial-gradient(#330000, #000000);">
+  <form id="myForm" style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:80vh;gap:4vh;height:100vh;overflow-y:auto;">
+    <div id ="0" style ="display:flex;flex-direction:row;gap:2vw;">
+<input id="0" type ="button" value ="1000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="1" type ="button" value ="2000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="2" type ="button" value ="3000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="3" type ="button" value ="4000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="4" type ="button" value ="5000" class="button question" style="font-style:oblique;font-weight:bold;">
+</div>
+<div id ="1" style ="display:flex;flex-direction:row;gap:2vw;">
+<input id="0" type ="button" value ="1000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="1" type ="button" value ="2000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="2" type ="button" value ="3000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="3" type ="button" value ="4000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="4" type ="button" value ="5000" class="button question" style="font-style:oblique;font-weight:bold;">
+</div>
+<div id ="2" style ="display:flex;flex-direction:row;gap:2vw;">
+<input id="0" type ="button" value ="1000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="1" type ="button" value ="2000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="2" type ="button" value ="3000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="3" type ="button" value ="4000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="4" type ="button" value ="5000" class="button question" style="font-style:oblique;font-weight:bold;">
+</div>
+<div id ="3" style ="display:flex;flex-direction:row;gap:2vw;">
+<input id="0" type ="button" value ="1000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="1" type ="button" value ="2000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="2" type ="button" value ="3000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="3" type ="button" value ="4000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="4" type ="button" value ="5000" class="button question" style="font-style:oblique;font-weight:bold;">
+</div>
+<div id ="4" style ="display:flex;flex-direction:row;gap:2vw;">
+<input id="0" type ="button" value ="1000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="1" type ="button" value ="2000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="2" type ="button" value ="3000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="3" type ="button" value ="4000" class="button question" style="font-style:oblique;font-weight:bold;">
+<input id="4" type ="button" value ="5000" class="button question" style="font-style:oblique;font-weight:bold;">
+</div>
+
+    <div style ="display:flex;flex-direction:row;gap:2vw;">
+      <input id="clear" type ="button" value ="Clear" class="button" style="font-style:oblique;font-weight:bold;">
+      <input id="showContent" type ="button" value ="Show Content" class="button" style="font-style:oblique;font-weight:bold;">
+      <input id="stopContent" type ="button" value ="Stop Content" class="button" style="font-style:oblique;font-weight:bold;">
+      <input id="showAnswer" type ="button" value ="Show Answer" class="button" style="font-style:oblique;font-weight:bold;">
+      <input id="continue" type ="button" value ="Continue" class="button" style="font-style:oblique;font-weight:bold;">
+    </div>
+    <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
+      <p style="color:white;font-size:2vw">Question:</p><br>
+      <p id="questionText" style="color:white;font-size:2vw"></p>
+    </div>
+    <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
+      <p style="color:white;font-size:2vw">Answer:</p><br>
+      <p id="questionAnswer" style="color:white;font-size:2vw"></p>
+    </div>
+  </form>
+  <script>
+    let ws = new WebSocket("ws://10.128.52.94:58949/actions");
+    let playerName = null;
+	
+    ws.onopen = () => console.log("Connected!");
+
+    function sendAction(user, action, category, question) {
+        ws.send(JSON.stringify({ user, action, category, question }));
+    }
+
+    const buttons = document.querySelectorAll(".question");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", (event) => {
+          event.preventDefault();
+          sendAction("admin", "Open", btn.parentElement.id, btn.id);
+          btn.style.visibility = "hidden";
+        });
+    });
+
+    document.getElementById("clear").addEventListener("click", function(e) {
+        e.preventDefault();
+        sendAction("admin", "Clear", NaN, NaN);
+    });
+
+    ws.onmessage = (event) => {
+      console.log(event.data);
+	    const msg = JSON.parse(event.data);
+
+      if (msg.action === "Question") {
+
+        if (msg.type === 0) {
+          document.getElementById("questionText").innerText = msg.content;
+        } else if (msg.type === 1) {
+          document.getElementById("questionText").innerText = "This is an image question";
+        } else if (msg.type === 2) {
+          document.getElementById("questionText").innerText = "This is an audio question";
+        }
+
+        document.getElementById("questionAnswer").innerText = q.answer;
+
+      }
+    }
+  </script>
+</body>
+</html>

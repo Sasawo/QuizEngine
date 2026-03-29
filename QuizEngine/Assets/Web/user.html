@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  html, body {
+    -webkit-tap-highlight-color: transparent; /* iOS Safari */
+    -webkit-user-select: none; /* prevent text selection on iOS */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* standard */
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-color: lightblue;
+  }
+</style>
+</head>
+<body style="background:radial-gradient(#330000, #000000);">
+  <script>
+    let ws = new WebSocket("ws://10.128.52.94:58949/actions");
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("name");
+
+    document.body.addEventListener("mousedown", () => {
+	    document.body.style.background = "radial-gradient(#005500, #000000)";
+	    ws.send(JSON.stringify({ user, action:"Ready" }));
+    });
+
+    document.body.addEventListener("touchstart", () => {
+	    document.body.style.background = "radial-gradient(#005500, #000000)";
+	    ws.send(JSON.stringify({ user, action:"Ready" }));
+    });
+
+    document.body.addEventListener("mouseup", () => {
+      document.body.style.background = "radial-gradient(#330000, #000000)"
+    });
+
+    document.body.addEventListener("touchend", () => {
+      document.body.style.background = "radial-gradient(#330000, #000000)"
+    });
+  </script>
+</body>
+</html>

@@ -14,6 +14,7 @@ public class SetupUI : MonoBehaviour
         for (int i = 0; i < data.Rounds[GameManager.Instance.RoundNumber].Categories.Count; ++i)
         {
             GameObject row = Instantiate(RowPrefab, Column);
+            GameplayManager.Instance.QuestionList.Add(new());
 
             GameObject title = Instantiate(TitleBallotPrefab, row.GetComponent<RectTransform>());
             title.transform.Find("Text").GetComponent<TMP_Text>().text = data.Rounds[GameManager.Instance.RoundNumber].Categories[i].Name;
@@ -22,13 +23,10 @@ public class SetupUI : MonoBehaviour
             {
 				GameObject question = Instantiate(QuestionBallotPrefab, row.GetComponent<RectTransform>());
 				question.transform.Find("Text").GetComponent<TMP_Text>().text = ((j + 1) * 1000).ToString();
+                question.GetComponent<QuestionBallot>().Question = GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions[j];
+
+                GameplayManager.Instance.QuestionList[i].Add(question.GetComponent<QuestionBallot>());
 			}
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

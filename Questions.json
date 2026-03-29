@@ -6,24 +6,29 @@
                     "name": "category name 1",
                     "questions": [
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is an image question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Image"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is an audio question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Audio"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         }
                     ]
                 },
@@ -31,24 +36,29 @@
                     "name": "category name 2",
                     "questions": [
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         }
                     ]
                 },
@@ -56,24 +66,29 @@
                     "name": "category name 3",
                     "questions": [
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         }
                     ]
                 },
@@ -81,24 +96,29 @@
                     "name": "category name 4",
                     "questions": [
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         }
                     ]
                 },
@@ -106,24 +126,29 @@
                     "name": "category name 5",
                     "questions": [
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         },
                         {
-                            "text": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly."
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text"
                         }
                     ]
                 }
