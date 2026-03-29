@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using WebSocketSharp;
 using WebSocketSharp.Server;
@@ -75,9 +76,11 @@ public class ServerPersistor : MonoBehaviour
 		{
 			replacing += $"<div id =\"{i}\" style =\"display:flex;flex-direction:row;gap:2vw;\">\n";
 
+			replacing += $"<input id=\"category\" type =\"button\" value =\"{GameManager.Instance.GameData.Rounds[0].Categories[i].Name}\" class=\"button altButton\">\n";
 			for (int j = 0; j < GameManager.Instance.GameData.Rounds[0].Categories[i].Questions.Count; ++j)
-				replacing += $"<input id=\"{j}\" type =\"button\" value =\"{(j + 1) * 1000}\" class=\"button question\" style=\"font-style:oblique;font-weight:bold;\">\n";
+				replacing += $"<input id=\"{j}\" type =\"button\" value =\"{(j + 1) * 1000}\" class=\"button question altButton\">\n";
 
+			replacing += $"<input id=\"{GameManager.Instance.GameData.Rounds[0].Categories[i].Questions.Count}\" type =\"button\" value =\"Bonus\" class=\"button question altButton\">\n";
 			replacing += "</div>\n";
 		}
 
@@ -137,14 +140,32 @@ public class UserActions : WebSocketBehavior
 			case "Ready":
 				UserReady(name);
 				break;
-			case "Clear":
-				AdminClear();
-				break;
 			case "Start":
 				AdminStartGame();
 				break;
 			case "Open":
 				AdminOpenQuestion(e);
+				break;
+			case "GetPlayers":
+				AdminGetPlayers();
+				break;
+			case "Increment":
+				AdminIncrement(e);
+				break;
+			case "Clear":
+				AdminClear();
+				break;
+			case "Show":
+				AdminShowQuestion();
+				break;
+			case "Stop":
+				AdminStopQuestion();
+				break;
+			case "Answer":
+				AdminShowAnswer();
+				break;
+			case "Continue":
+				AdminContinue();
 				break;
 			default:
 				break;
@@ -152,10 +173,16 @@ public class UserActions : WebSocketBehavior
 	}
 	private void UserInit(string name)
 	{
+		if (GameManager.Instance.currentScene != "UserSetup")
+		{
+			Send("Registration is closed");
+			return;
+		}
+
 		if (!GameManager.Instance.players.Where(x => x.Name == name).Any()) Send("Valid");
 		else
 		{
-			Send("Invalid");
+			Send("Selected name is invalid");
 			return;
 		}
 
@@ -174,19 +201,58 @@ public class UserActions : WebSocketBehavior
 	{
 		GameManager.Instance.LoadScene("GameScene");
 	}
+	private void AdminGetPlayers()
+	{
+		foreach (Player p in GameManager.Instance.players)
+		{
+			var o = new
+			{
+				user = p.Name,
+				action = "PlayerAdd",
+				content = GameManager.Instance.GameData.CommonDenominator,
+				answer = "lol, why you reading this",
+				type = "also useless"
+			};
+
+			Send(JsonConvert.SerializeObject(o));
+		}
+	}
 	private void AdminOpenQuestion(MessageEventArgs e)
 	{
-		GameplayManager.Instance.RowIndex = (int)JObject.Parse(e.Data)["category"];
-		GameplayManager.Instance.ColIndex = (int)JObject.Parse(e.Data)["question"];
-
+		var parsed = JObject.Parse(e.Data);
+		GameplayManager.Instance.CurrentQuestion = GameplayManager.Instance.QuestionList[(int)parsed["category"]][(int)parsed["question"]];
+		
 		var o = new { 
 			user = (string)JObject.Parse(e.Data)["user"],
 			action = "Question",
-			content = GameplayManager.Instance.GetCurrentQuestion().Question.Content,
-			answer = GameplayManager.Instance.GetCurrentQuestion().Question.Answer,
-			type = GameplayManager.Instance.GetCurrentQuestion().Question.Type
+			content = GameplayManager.Instance.CurrentQuestion.Question.Content,
+			answer = GameplayManager.Instance.CurrentQuestion.Question.Answer,
+			type = GameplayManager.Instance.CurrentQuestion.Question.Type
 		};
 
 		Send(JsonConvert.SerializeObject(o));
+	}
+	private void AdminIncrement(MessageEventArgs e)
+	{
+		var parsed = JObject.Parse(e.Data);
+
+		GameManager.Instance.players.Where(x => x.Name == (string)parsed["category"]).First().Points += (int)parsed["value"];
+		GameplayManager.Instance.UpdatePoints = true;
+	}
+	private void AdminShowQuestion()
+	{
+		GameplayManager.Instance.ShowContent = true;
+	}
+	private void AdminStopQuestion()
+	{
+		GameplayManager.Instance.StopContent = true;
+	}
+	private void AdminShowAnswer()
+	{
+		GameplayManager.Instance.ShowAnswer = true;
+	}
+	private void AdminContinue()
+	{
+		GameplayManager.Instance.Continue = true;
 	}
 }

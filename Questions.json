@@ -4,151 +4,196 @@
             "categories": [
                 {
                     "name": "category name 1",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
                     "questions": [
                         {
                             "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "1000"
                         },
                         {
-                            "content": "This is an image question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/image.jpg",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Image"
+                            "type": "Image",
+                            "points": "2000"
                         },
                         {
-                            "content": "This is an audio question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/audio.mp3",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Audio"
+                            "type": "Audio",
+                            "points": "3000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "4000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "5000"
                         }
                     ]
                 },
                 {
                     "name": "category name 2",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
                     "questions": [
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "1000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "2000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "3000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "4000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "5000"
                         }
                     ]
                 },
                 {
                     "name": "category name 3",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
                     "questions": [
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "1000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "2000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "3000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "4000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "5000"
                         }
                     ]
                 },
                 {
                     "name": "category name 4",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
                     "questions": [
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "1000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "2000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "3000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "4000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "5000"
                         }
                     ]
                 },
                 {
                     "name": "category name 5",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
                     "questions": [
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "1000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "2000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "3000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "4000"
                         },
                         {
                             "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
                             "answer": "Yep, it displayed correctly.",
-                            "type": "Text"
+                            "type": "Text",
+                            "points": "5000"
                         }
                     ]
                 }

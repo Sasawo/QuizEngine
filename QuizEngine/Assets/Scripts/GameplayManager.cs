@@ -1,14 +1,18 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
 public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager Instance { get; private set; }
     public List<List<QuestionBallot>> QuestionList { get; set; } = new();
     public QuestionBallot CurrentQuestion = null;
-
-    public int RowIndex = -1;
-    public int ColIndex = -1;
+	[NonSerialized] public bool UpdatePoints = false;
+	[NonSerialized] public bool ShowContent = false;
+	[NonSerialized] public bool StopContent = false;
+	[NonSerialized] public bool ShowAnswer = false;
+	[NonSerialized] public bool Continue = false;
 
 	private void Awake()
 	{
@@ -18,13 +22,43 @@ public class GameplayManager : MonoBehaviour
 
     void Update()
     {
-        if (RowIndex >= 0 && ColIndex >= 0 && QuestionList[RowIndex][ColIndex].Valid)
-        {
-            CurrentQuestion = QuestionList[RowIndex][ColIndex];
-			CurrentQuestion.Load();
-            RowIndex = -1;
-            ColIndex = -1;
+        if (CurrentQuestion && CurrentQuestion.Valid)
+		{
+			CurrentQuestion.Question.Load();
+			CurrentQuestion.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+			CurrentQuestion.gameObject.transform.Find("Text").GetComponent<TMP_Text>().text = "";
+			CurrentQuestion.Valid = false;
 		}
-    }
-    public QuestionBallot GetCurrentQuestion() => QuestionList[RowIndex][ColIndex];
+
+		if (ShowContent)
+		{
+			CurrentQuestion.Question.Show();
+			ShowContent = false;
+		}
+
+		if (StopContent)
+		{
+			CurrentQuestion.Question.Stop();
+			StopContent = false;
+		}
+
+		if (ShowAnswer)
+		{
+			CurrentQuestion.Question.ShowAnswer();
+			ShowAnswer = false;
+		}
+
+		if (!Continue) return;
+
+		if (CurrentQuestion is not null)
+		{
+			CurrentQuestion.Question.Continue();
+			CurrentQuestion = null;
+			Continue = false;
+		}
+		else
+		{
+			Continue = false;
+		}
+	}
 }

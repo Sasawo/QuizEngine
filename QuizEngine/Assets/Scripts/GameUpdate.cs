@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameUpdate : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class GameUpdate : MonoBehaviour
 	}
 	void Update()
     {
+		if (GameplayManager.Instance.UpdatePoints)
+		{
+			foreach (GameObject p in players)
+				p.transform.Find("Points").GetComponent<TMP_Text>().text = $"{GameManager.Instance.players.Where(x => x.Name == p.transform.Find("Name").GetComponent<TMP_Text>().text).First().Points}";
+
+			GameplayManager.Instance.UpdatePoints = false;
+		}
+
         if (GameManager.Instance.readyPlayers.Count == prevCount) return;
 
         for (int i = readyShow.childCount - 1; i >= 0; --i)

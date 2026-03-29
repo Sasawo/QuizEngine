@@ -18,15 +18,18 @@ public class SetupUI : MonoBehaviour
 
             GameObject title = Instantiate(TitleBallotPrefab, row.GetComponent<RectTransform>());
             title.transform.Find("Text").GetComponent<TMP_Text>().text = data.Rounds[GameManager.Instance.RoundNumber].Categories[i].Name;
+			title.GetComponent<QuestionBallot>().Question = GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Bonus;
 
 			for (int j = 0; j < data.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions.Count; ++j)
             {
 				GameObject question = Instantiate(QuestionBallotPrefab, row.GetComponent<RectTransform>());
-				question.transform.Find("Text").GetComponent<TMP_Text>().text = ((j + 1) * 1000).ToString();
+				question.transform.Find("Text").GetComponent<TMP_Text>().text = GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions[j].Points.ToString();
                 question.GetComponent<QuestionBallot>().Question = GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions[j];
 
                 GameplayManager.Instance.QuestionList[i].Add(question.GetComponent<QuestionBallot>());
 			}
-        }
+
+			GameplayManager.Instance.QuestionList[i].Add(title.GetComponent<QuestionBallot>());
+		}
     }
 }

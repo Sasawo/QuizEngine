@@ -45,9 +45,9 @@
 <body style="background:radial-gradient(#330000, #000000);">
 
 <form id="myForm" style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;">
-  <label for="name" class="center" style="font-style:oblique;font-weight:bold;font-color:white">Screen name:</label>
+  <label for="name" class="center" style="font-style:oblique;font-weight:bold;color:white">Screen name:</label>
   <div class="center">
-    <input type="text" id="name" name="name" class="center input" maxlength="30" style="gap:2vh;">
+    <input type="text" id="name" name="name" class="center input" maxlength="30" minlength="1" style="gap:2vh;">
     <br><br>
   </div>
   <input type="submit" value="Submit" class="button" style="font-style:oblique;font-weight:bold;">
@@ -66,12 +66,14 @@
     }
 
     ws.onmessage = (event) => {
-	console.log("Recieved", event.data);
+	    console.log("Recieved", event.data);
 
         if (event.data === "Valid") {
 	    window.location.href = "user.html?name=" + playerName;
-        } else
-	    document.getElementById("wrongName").style.visibility = "visible";    
+        } else {
+          document.getElementById("wrongName").innerText = event.data;
+          document.getElementById("wrongName").style.visibility = "visible";   
+        }  
     }
 
     document.getElementById("myForm").addEventListener("submit", function(e) {
