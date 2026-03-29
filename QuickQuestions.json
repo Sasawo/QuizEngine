@@ -1,0 +1,23 @@
+{
+    "rounds": [
+        {
+            "categories": [
+                {
+                    "name": "category name 1",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text",
+                            "points": "1000"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

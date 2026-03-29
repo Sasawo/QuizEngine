@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager Instance { get; private set; }
@@ -51,6 +52,8 @@ public class GameplayManager : MonoBehaviour
 
 		if (!Continue) return;
 
+		if (SceneManager.GetActiveScene().name == "WinScene") Application.Quit();
+
 		if (CurrentQuestion is not null)
 		{
 			CurrentQuestion.Question.Continue();
@@ -60,9 +63,16 @@ public class GameplayManager : MonoBehaviour
 		else if (!QuestionList.Where(x => x.Where(y => y.Valid).Any()).Any())
 		{
 			++GameManager.Instance.RoundNumber;
+
+			if (GameManager.Instance.RoundNumber >= GameManager.Instance.GameData.Rounds.Count)
+			{
+				SceneManager.LoadScene("WinScene");
+				Continue = false;
+				return;
+			}
+
 			ServerPersistor.Instance.ReInitGameContent();
 			SetupUI.Instance.Setup();
-			Continue = false;
 		}
 
 		Continue = false;
