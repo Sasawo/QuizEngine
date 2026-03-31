@@ -1,0 +1,601 @@
+{
+    "rounds": [
+        {
+            "categories": [
+                {
+                    "name": "Obrázkové knihy",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/Narnia.png",
+                    "answer": "Narnia",
+                    "type": "Image",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/HarryPotter.png",
+                            "answer": "Harry Potter",
+                            "type": "Image",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/TrajaPatraci.png",
+                            "answer": "Traja Pátrači",
+                            "type": "Image",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/PanPrstenov.png",
+                            "answer": "Pán Prsteňov",
+                            "type": "Image",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/Pinokio.png",
+                            "answer": "Pinocchio",
+                            "type": "Image",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Obrazkove_Knihy/StarecMore.png",
+                            "answer": "Starec a More",
+                            "type": "Image",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Wikigrafia",
+                    "content": "Je okresné mesto ležiace v Trenčianskom kraji vzdialené 48 km od krajského mesta Trenčín. Počtom obyvateľov je to 11. najväčšie mesto na Slovensku. Je centrom regiónu Horná Nitra.",
+                    "answer": "Prievidza",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Počtom obyvateľov je najväčším mestom Spiša, tretím najväčším mestom východného Slovenska a desiatym najväčším mestom na Slovensku. Vďaka svojej polohe sa mu dostal prívlastok vstupná brána do Vysokých Tatier.",
+                            "answer": "Poprad",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Počtom obyvateľov je štvrtým najväčším mestom na Slovensku. Je administratívnym, hospodárskym, dopravným a kultúrnym centrom severozápadného Slovenska, niekedy sa jej hovorí „perla na Váhu“.",
+                            "answer": "Žilina",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Je tretím najľudnatejším mestom na Slovensku s približne 82 300 obyvateľmi. Má štyri katastrálne časti, z ktorých 3 sú: Šalgovík, Solivar a Nižná Šebastová, a je prirodzeným kultúrnym, hospodárskym, dopravným a administratívnym centrom regiónu Šariš.",
+                            "answer": "Prešov",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Je okresné mesto na Slovensku ležiace v Banskobystrickom kraji. Počtom obyvateľov je tretie najväčšie v kraji. Leží priamo v centre historického regiónu Novohrad. Archeologické nálezy ukazujú na osídlenia v miestach, kde sa dnes nachádza, už v praveku.",
+                            "answer": "Lučenec",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Leží na križovatke ciest spájajúcich Pohronie, Ponitrie a banské mestá (najmä Banskú Štiavnicu a Kremnicu) a preto sa v jeho blízkosti nachádzajú ruiny dvoch hradov (Šášov a Revište) a jeho okolie bolo miestom viacerých bojov proti Osmanom, protihabsburským povstaniam, počas SNP a druhej svetovej vojny.",
+                            "answer": "Žiar nad Hronom",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Populárne prvočísla",
+                    "content": "Toto prvočíslo, mimo toho, že súčet jeho cifier je tiež prvočíslom, je rokom, kedy sa Phillip J. Fry, hlavná postava seriálu Futurama, prebudí z Kryospánku, a odštartuje tak dej seriálu.",
+                    "answer": "2999",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Aj keď patrý medzi prvočísla, toto číslo má rozsiahlu históriu skôr ako povera. Je viezané k poslednej večeri, a rezprezentuje v tomto význame nešťastie. Na základe tejto povery vznikla aj hororová filmová séria, v ktorej názve sa číslo nachádza.",
+                            "answer": "13",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Toto číslo, ako aj model auta značky Porsche, reprezentuje tragický útok na dvojičky v New Yorku v roku 2001 (ktorý prvočíslo nie je). Zhodou okolností je toto číslo v USA aj linkou prvej pomoci.",
+                            "answer": "911",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "V roku, ktorý je reprezentovaný týmto prvočíslom, vyšiel prvý diel filmovej série Piráti z Karibiku, ako aj posledný diel filmovej série Pána Prsťenov. Taktiež sa v tomto roku narodil Váš kvízodávač.",
+                            "answer": "2003",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Okrem toho, že je prvočíslom, toto číslo reprezentuje aj populárny internetový trend z roku 2025, ktorý pôvodom pochádza z tiktoku. Trend vznikol medzi predstavitwľmi generácie Z, nemá žiadny inherentný význam, a je často sprevádzaný striedavým dvíhaním predlaktí.",
+                            "answer": "67",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Toto prvočíslo, ktoré je tiež číselným palindrómom, je často používané ako dezignátor začiatočníckych vzdelávacích kurzov v zahraničných školách a inde. Je to taktiež číslo autobusu, ktorý premáva medzi Banskou Bystricou a Zvolenom.",
+                            "answer": "101",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "One Direction",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2020.jpg",
+                    "answer": "2020 - 2023",
+                    "type": "Image",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2002.jpg",
+                            "answer": "2002 - 2006",
+                            "type": "Image",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2023.jpg",
+                            "answer": "2023 - 2027",
+                            "type": "Image",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2012.jpg",
+                            "answer": "2012 - 2016",
+                            "type": "Image",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2006.jpg",
+                            "answer": "2006 - 2010",
+                            "type": "Image",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/One_Direction/fico_2016.jpg",
+                            "answer": "2016 - 2020",
+                            "type": "Image",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Oldies Opačne",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/TheFinalCountdown.mp3",
+                    "answer": "The Final Countdown - Europe",
+                    "type": "Audio",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/DancingQueen.mp3",
+                            "answer": "Dancing Queen - ABBA",
+                            "type": "Audio",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/TakeOnMe.mp3",
+                            "answer": "Take On Me - A-ha",
+                            "type": "Audio",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/Thriller.mp3",
+                            "answer": "Thriller - Michael Jackson",
+                            "type": "Audio",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/Champions.mp3",
+                            "answer": "We Are The Champions - Queen",
+                            "type": "Audio",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Oldies_Opacne/Africa.mp3",
+                            "answer": "Africa - Toto",
+                            "type": "Audio",
+                            "points": "5000"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categories": [
+                {
+                    "name": "Malý, malá, malé",
+                    "content": "toto pohorie je jadrové pohorie na severe Slovenska v Žilinskom kraji. Je súčasťou krajinného celku Fatransko-tatranskej oblasti, ktorá je súčasťou Vnútorných Západných Karpát.",
+                    "answer": "Malá Fatra",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Táto kniha opisuje príbeh chlapca, ktorý putuje vesmírom, a počas svojich ciest narazí na pilota, ktorému vyrozpráva svoj príbeh, a s ktorým sa skamaráti.",
+                            "answer": "Malý Princ",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Toto súhvezdie patrí medzi 88 moderných súhvezdí a bolo tiež súčasťou 48 Ptolemaiových súhvezdí. Je dôležité najmä kvôli navigácii na severnej pologuli. Jeho najjasnejšia hviezda Polárka ukazuje takmer presne polohu severného svetového pólu.",
+                            "answer": "Malý voz / Malá medvedica",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Táto choroba je jedna z najzávažnejších infekčných chorôb. Ročne na ňu ochorie približne 300 – 500 miliónov ľudí, pričom až 1 – 3 milióny z nich zomrie. Až 90 % smrteľných prípadov sa vyskytuje v subsaharskej Afrike.",
+                            "answer": "Malária",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Toto slovo znamená nehoda, nešťasie alebo problém. Je synonymom slovu šlamastika.",
+                            "answer": "Malér",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Toto mesto sa nachádza na ostrove, ktorý má dĺžku 1,7 km a šírku 1 km, žije tu viac ako 123-tisíc obyvateľov, pričom je to najhustejšie zaľudnené mesto na svete a prakticky celý ostrov je urbanizovaný. Skoro tretina populácie Maldív žije v tomto hlavnom meste.",
+                            "answer": "Malé",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Znelky z telky",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Dragon.mp3",
+                    "answer": "Ako si vycvičiť draka",
+                    "type": "Audio",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Pirates.mp3",
+                            "answer": "Piráti z Karibiku",
+                            "type": "Audio",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Indiana.mp3",
+                            "answer": "Indiana Jones",
+                            "type": "Audio",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Terminator.mp3",
+                            "answer": "Terminátor",
+                            "type": "Audio",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Panda.mp3",
+                            "answer": "Kung Fu Panda",
+                            "type": "Audio",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Znelky_z_Telky/Interstellar.mp3",
+                            "answer": "Interstellar",
+                            "type": "Audio",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Kde mám okuliare?",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/spielberg_blurry.png",
+                    "answer": "Steven Spielberg",
+                    "type": "Image",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/trump_blurry.png",
+                            "answer": "Donald Trump",
+                            "type": "Image",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/rock_blurry.png",
+                            "answer": "Dwayne \"The Rock\" Johnson",
+                            "type": "Image",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/swift_blurry.png",
+                            "answer": "Taylor Swift",
+                            "type": "Image",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/bolt_blurry.png",
+                            "answer": "Usain Bolt",
+                            "type": "Image",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Kde_Mam_Okuliare/theresa_blurry.png",
+                            "answer": "Matka Tereza",
+                            "type": "Image",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Jaro Fill-in",
+                    "content": "Čašník jedlo neprináša\nMožnože je z Mikuláša\nDonesie ho, až keď zaznie\n...",
+                    "answer": "... Tu sú Františkovy Lázně",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Načo sú hlúpe spory\nČo vedú podaktorí?\nA vyzerajú pritom nevinne\nJe lepšie zaťať zuby\nA ak Ťa jazyk svrbí\n...",
+                            "answer": "... Tak si ho radšej omoč vo víne",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Na celý svet sa dívam cez okno\nDoma je najlepšie a všade je dobre\nNa celý svet sa dívam cez okno\n...",
+                            "answer": "... Každý to okno odo mňa žobre",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Neverte mládencom, ak sa vám zapáčia\nVyjedia vám všetky, čerešne z koláča\nChlapci neublížia, kým hľadia zo stromu\n...",
+                            "answer": "... Keď zoskočia dolu, čakajte pohromu",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Veď je taký ako my\nZdravý, mocný, lakomý\n...",
+                            "answer": "... Prečo sa len od nás takto dištancuje?",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Za dedinou štyri vŕby stoja,\njedna z nich je určite tá moja,\n...",
+                            "answer": "... ta ja chodím, keď sa zvečerí.",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Slovenskí rapperi",
+                    "content": "Koloman Magyary je známy aj ako Kali. Kalí aj šedý zákal. Ktorú časť oka ovplyvňuje šedý zákal?",
+                    "answer": "Šošovku",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Michael Kmeť je známy najmä pod menom Separ, a veru na pódiu riadne Separuje. Akej farby je kontajner, do ktorého pri separovaní odpadu ide kov?",
+                            "answer": "Červená",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Patrik Vrbovský je známy pod umeleckým menom Rytmus. Rytmus znamená medzi iným aj pravidelné striedanie určitých jazykových prvkov vo verši s cieľom vytvoriť rytmický impulz. Ako sa volá dvojslabičná stopa, ktorá sa skladá z krátkej a dlhej slabiky?",
+                            "answer": "Jamb",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Lukáš Kajanovič vystupuje pod monikrom Pil C, čo je dôležitá otázka, keďže vyše 60% nášho tela tvorí voda. Ako sa volá fyzikálny zákon, ktorý znie \"Teleso ponorené do kvapaliny je nadľahčované silou, ktorá sa rovrá tiaži kvapaliny, ktorú toto teleso vytlačilo.\"",
+                            "answer": "Archimedov zákon",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Michal Dušička vystupuje ako slovenský rapper pod interprétskym menom Majk Spirit. Spirit sa nazývajú aj niektoré alkoholické nápoje. Koľko percent obsahuje najalkolickejší variant slovenského alkoholu Tatratea? (tolerancia 2%)",
+                            "answer": "72%",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Michal Straka je slovenský rapper známy ako Ego. Spolu s Id a Superegom sú súčasťou modelu vrámci psychoanalýzi. Kto prvýkrát popísal tento model?",
+                            "answer": "Freud",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categories": [
+                {
+                    "name": "Pieseň sirény",
+                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                    "answer": "Yep, it displayed correctly.",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/image.jpg",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Image",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/audio.mp3",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Audio",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
+                            "answer": "Yep, it displayed correctly.",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Dabované Filmy",
+                    "content": "Muž, ktorý zabil jeho rodinu, bol terorista. Ak by sa jej vlámal do domu a zabil jej psa, zaplatila by útekom.",
+                    "answer": "John Wick",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Americká história od 50. do 70. rokov 20. storočia je o 75-ročnom mužovi z Alabamy, ktorý túži po svojom detstve.",
+                            "answer": "Forrest Gump",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Najväčšia práčovňa na svete sa nepridala, ale bojovala proti obludnej jachte a armáde mŕtvych.",
+                            "answer": "The Avengers",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Zradný otec dal svoje vzácne kráľovstvo svojmu zlomyseľnému synovi.",
+                            "answer": "Krstný otec",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Devätnásťročné dievča sa na anglickej jachte zamiluje do peknej, hanblivej sekretárky.",
+                            "answer": "Titanic",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Mladý vidiecky chlapec spojí sily so svojimi nečakanými priateľmi, aby zachránil zrkadlo pred zlom, ktoré ohrozuje krajinu, a zachránil svojho padlého princa.",
+                            "answer": "Star Wars - Epizóda IV",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Mozaika Sveta",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/Easter.png",
+                    "answer": "Veľkonočný ostrov",
+                    "type": "Image",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/Eiffel.png",
+                            "answer": "Eiffelova veža",
+                            "type": "Image",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/Pyramids.png",
+                            "answer": "Pyramídy v Gize",
+                            "type": "Image",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/StoneHenge.png",
+                            "answer": "Stonehenge",
+                            "type": "Image",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/Pisa.png",
+                            "answer": "Šikmá veža v Pise",
+                            "type": "Image",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Mozaika_Sveta/Sydney.png",
+                            "answer": "Opera v Sydney",
+                            "type": "Image",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Poligraf",
+                    "content": "Slávny skladateľ filmovej hudby John Williams ohlásil v roku 2022, že film Indiana Jones a Kráľovstvo Krištáľovej Lebky bude jeho posledným filmom, čo však neskôr zobral späť.",
+                    "answer": "Tým filmom nebol Indiana Jones a Kráľovstvo Krištáľovej Lebky, ale Indiana Jones a Nástroj Osudu.",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "Lego založil v roku 1932 nórsky tesár Ole Kirk Christiansen, kde spočiatku vyrábal drevené hračky. Názov \"Lego\" je odvodený z nórskych slov \"leg godt,\" čo v preklade znamená \"hraj sa dobre.\"",
+                            "answer": "Lego bolo založené v dánsku, nie v nórsku.",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "Slovensko, dlhý tvar Slovenská republika, je vnútrozemský štát v strednej Európe. Na severozápade hraničí s Českom a Maďarskom, na juhozápade s Rakúskom, na severe s Poľskom, a na východe s Ukrajinou.",
+                            "answer": "Maďarsko je južne od Slovenska.",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Film Wall-E od štúdia Pixar sleduje malého upratovacieho robota, ktorý po strete s Annou, futuristickým robotom, cestuje do vesmíru na loď Axiom, za ľudským populom.",
+                            "answer": "Robot sa volá Eva, nie Anna.",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "Farebný formát RGBA je založený na formáte RGB, ktorý má farebné zložky červenej, modrej a žltej, s pridanou zložkou alpha, ktorá predstavuje transparentnosť.",
+                            "answer": "Zložky RGB sú červená, zelená a modrá.",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "V severskej mitológii žijú bohovia oddelene od ľudí (ktorí žijú v Niflheime) v božskej ríši zvanej Asgard. Tieto dve ríše spája dúhový most Bifrost.",
+                            "answer": "Ríša ľudí sa volá Midgard, nie Niflheim.",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                },
+                {
+                    "name": "Polygot",
+                    "content": "Na kojem je jeziku ova rečenica?",
+                    "answer": "Chorváčština",
+                    "type": "Text",
+                    "points": "3000",
+                    "questions": [
+                        {
+                            "content": "この文は何語ですか？",
+                            "answer": "Japonština",
+                            "type": "Text",
+                            "points": "1000"
+                        },
+                        {
+                            "content": "На каком языке написано это предложение?",
+                            "answer": "Ruština",
+                            "type": "Text",
+                            "points": "2000"
+                        },
+                        {
+                            "content": "Σε ποια γλώσσα είναι αυτή η πρόταση;",
+                            "answer": "Gréčtina",
+                            "type": "Text",
+                            "points": "3000"
+                        },
+                        {
+                            "content": "In welke taal is deze zin?",
+                            "answer": "Holandština",
+                            "type": "Text",
+                            "points": "4000"
+                        },
+                        {
+                            "content": "Em que língua está esta frase?",
+                            "answer": "Portugalčina",
+                            "type": "Text",
+                            "points": "5000"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

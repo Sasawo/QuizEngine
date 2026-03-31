@@ -1,5 +1,3 @@
-using NUnit.Framework;
-using System;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
@@ -7,7 +5,7 @@ using System.Linq;
 
 public class GameUpdate : MonoBehaviour
 {
-    [SerializeField] RectTransform readyShow;
+    [SerializeField] List<RectTransform> readyShow;
 	[SerializeField] RectTransform playerShow;
 	[SerializeField] GameObject namePrefab;
 	private List<GameObject> players = new();
@@ -35,14 +33,16 @@ public class GameUpdate : MonoBehaviour
 
         if (GameManager.Instance.readyPlayers.Count == prevCount) return;
 
-        for (int i = readyShow.childCount - 1; i >= 0; --i)
-				Destroy(readyShow.GetChild(i).gameObject);
+		for (int i = 0; i < readyShow.Count; ++i)
+			for (int j = readyShow[i].childCount - 1; j >= 0; --j)
+				Destroy(readyShow[i].GetChild(j).gameObject);
 
-		for (int i = 0; i < GameManager.Instance.readyPlayers.Count; ++i)
-        {
-            GameObject text = Instantiate(namePrefab, readyShow);
-            text.GetComponent<TMP_Text>().text = GameManager.Instance.readyPlayers[i];
-		}
+		for (int i = 0; i < readyShow.Count; ++i)
+			for (int j = 0; j < GameManager.Instance.readyPlayers.Count; ++j)
+			{
+				GameObject text = Instantiate(namePrefab, readyShow[i]);
+				text.GetComponent<TMP_Text>().text = GameManager.Instance.readyPlayers[j];
+			}
 
         prevCount = GameManager.Instance.readyPlayers.Count;
 

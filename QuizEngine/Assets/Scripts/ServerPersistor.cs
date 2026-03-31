@@ -1,16 +1,12 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
@@ -84,7 +80,7 @@ public class ServerPersistor : MonoBehaviour
 
 			replacing += $"<input id=\"category\" type =\"button\" value =\"{GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Name}\" class=\"button altButton\">\n";
 			for (int j = 0; j < GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions.Count; ++j)
-				replacing += $"<input id=\"{j}\" type =\"button\" value =\"{(j + 1) * 1000}\" class=\"button question altButton\">\n";
+				replacing += $"<input id=\"{j}\" type =\"button\" value =\"{GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions[j].Points}\" class=\"button question altButton\">\n";
 
 			replacing += $"<input id=\"{GameManager.Instance.GameData.Rounds[GameManager.Instance.RoundNumber].Categories[i].Questions.Count}\" type =\"button\" value =\"Bonus\" class=\"button question altButton\">\n";
 			replacing += "</div>\n";
@@ -197,7 +193,17 @@ public class UserActions : WebSocketBehavior
 	}
 	private void UserReady(string name)
 	{
-		if (!GameManager.Instance.readyPlayers.Where(x => x == name).Any()) GameManager.Instance.readyPlayers.Add(name);
+		if (GameManager.Instance.readyPlayers.Where(x => x == name).Any()) return;
+			
+		GameManager.Instance.readyPlayers.Add(name);
+
+		var o = new
+		{
+			user = name,
+			action = "PlayerReady"
+		};
+
+		Sessions.SendTo(JsonConvert.SerializeObject(o), GameManager.Instance.adminID);
 	}
 	private void AdminClear()
 	{
@@ -209,19 +215,27 @@ public class UserActions : WebSocketBehavior
 	}
 	private void AdminGetPlayers()
 	{
+		GameManager.Instance.adminID = ID;
+
 		foreach (Player p in GameManager.Instance.players)
 		{
 			var o = new
 			{
 				user = p.Name,
 				action = "PlayerAdd",
-				content = GameManager.Instance.GameData.CommonDenominator,
-				answer = "lol, why you reading this",
-				type = "also useless"
+				divisor = GameManager.Instance.Divisor
 			};
 
 			Send(JsonConvert.SerializeObject(o));
 		}
+
+		var a = new
+		{
+			action = "SetDenom",
+			points = GameManager.Instance.GameData.CommonDenominator
+		};
+
+		Send(JsonConvert.SerializeObject(a));
 	}
 	private void AdminOpenQuestion(MessageEventArgs e)
 	{
@@ -233,6 +247,7 @@ public class UserActions : WebSocketBehavior
 			action = "Question",
 			content = GameplayManager.Instance.CurrentQuestion.Question.Content,
 			answer = GameplayManager.Instance.CurrentQuestion.Question.Answer,
+			points = GameplayManager.Instance.CurrentQuestion.Question.Points,
 			type = GameplayManager.Instance.CurrentQuestion.Question.Type
 		};
 

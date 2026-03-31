@@ -6,17 +6,18 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance { get; private set; }
-	public GameData GameData { get; set; } = new("C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/QuickQuestions.json");
+	public GameData GameData { get; set; } = null;
 	[SerializeField] public List<GameObject> playerPrefabs;
 	[NonSerialized] public List<Player> players = new();
 	[NonSerialized] public List<string> readyPlayers = new();
 	[NonSerialized] private string newScene = null;
 	[NonSerialized] public string currentScene = null;
+	[NonSerialized] public string adminID;
+	[NonSerialized] public int Divisor = 0;
 	public int RoundNumber { get; set; } = 0;
 	void Awake()
 	{

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameplayManager : MonoBehaviour
@@ -18,8 +17,15 @@ public class GameplayManager : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Instance != null && Instance != this)
+		{
+			Destroy(gameObject);
+			return;
+		}
+
 		Instance = this;
-        foreach (GameObject o in GameObject.FindGameObjectsWithTag("AltCamera")) o.GetComponent<Camera>().enabled = false;
+		DontDestroyOnLoad(gameObject);
+		foreach (GameObject o in GameObject.FindGameObjectsWithTag("AltCamera")) o.GetComponent<Camera>().enabled = false;
 	}
 
     void Update()

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <style>
 .button {
   background-color: #660000;
@@ -17,37 +18,55 @@
   font-style:oblique;
   font-weight:bold;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 </head>
 <body style="background:radial-gradient(#330000, #000000);">
-  <form id="myForm" style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:80vh;gap:4vh;height:100vh;overflow-y:auto;">
-    <CONTENT_REPLACE>
-    <div style ="display:flex;flex-direction:row;gap:2vw;">
-      <input id="clear" type ="button" value ="Clear" class="button altButton">
-      <input id="showContent" type ="button" value ="Show Content" class="button altButton">
-      <input id="stopContent" type ="button" value ="Stop Content" class="button altButton">
-      <input id="showAnswer" type ="button" value ="Show Answer" class="button altButton">
-      <input id="continue" type ="button" value ="Continue" class="button altButton">
-    </div>
-    <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
-      <p style="color:white;font-size:2vw">Question:</p><br>
-      <p id="questionText" style="color:white;font-size:2vw"></p>
-    </div>
-    <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
-      <p style="color:white;font-size:2vw">Answer:</p><br>
-      <p id="questionAnswer" style="color:white;font-size:2vw"></p>
-    </div>
-    <div id="playerPlus" style ="display:flex;flex-direction:row;gap:2vw;">
+  <div class="wrapper">
+    <form id="myForm" style="display:flex;flex-direction:column;gap:4vh;width:100%;max-width:100%;align-items:center;">
+      <CONTENT_REPLACE>
+      <div style ="display:flex;flex-direction:row;gap:2vw;">
+        <input id="clear" type ="button" value ="Clear" class="button altButton">
+        <input id="showContent" type ="button" value ="Show Content" class="button altButton">
+        <input id="stopContent" type ="button" value ="Stop Content" class="button altButton">
+        <input id="showAnswer" type ="button" value ="Show Answer" class="button altButton">
+        <input id="continue" type ="button" value ="Continue" class="button altButton">
+      </div>
+      <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
+        <p style="color:white;font-size:2vw">Question:</p><br>
+        <p id="questionText" style="color:white;font-size:2vw"></p>
+      </div>
+      <div style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
+        <p style="color:white;font-size:2vw">Answer:</p><br>
+        <p id="questionAnswer" style="color:white;font-size:2vw"></p>
+      </div>
+      <div id="playerReady" style ="display:flex;flex-direction:row;gap:2vw;justify-content:center;align-items:center;">
+        
+      </div>
+      <div id="playerPlus" style ="display:flex;flex-direction:row;gap:2vw;">
 
-    </div>
-    <div id="playerMinus" style ="display:flex;flex-direction:row;gap:2vw;">
+      </div>
+      <div id="playerMinus" style ="display:flex;flex-direction:row;gap:2vw;">
 
-    </div>
-  </form>
+      </div>
+    </form>
+  </div>
 <script>
     let ws = new WebSocket("ws://<IP_REPLACE>/actions");
     let playerName = null;
     let inQuestion = false;
+    let currentPoints = 0;
+    let commonDenom = 0;
 	
     ws.onopen = () => sendAction("admin", "GetPlayers", NaN, NaN, 0);
 
@@ -85,6 +104,7 @@
 
     document.getElementById("clear").addEventListener("click", function(e) {
         e.preventDefault();
+        document.getElementById("playerReady").innerHTML = "";
         sendAction("admin", "Clear", NaN, NaN, 0);
     });
 
@@ -106,12 +126,13 @@
     document.getElementById("continue").addEventListener("click", function(e) {
         e.preventDefault();
         sendAction("admin", "Continue", NaN, NaN, 0);
+        currentPoints = commonDenom;
         document.getElementById("questionText").innerText = "";
         document.getElementById("questionAnswer").innerText = "";
         inQuestion = false;
     });
 
-    function AddPlayer(parent, user, content, symbol) {
+    function AddPlayer(parent, user, symbol, divisor) {
       const btn = document.createElement("input");
       btn.id = "btn_" + user;
       btn.classList.add("button", "altButton");
@@ -119,7 +140,7 @@
       btn.type = "button";
 
       btn.addEventListener("click", () => {
-          sendAction("admin", "Increment", user, NaN, content);
+          sendAction("admin", "Increment", user, NaN, currentPoints / divisor);
       });
 
       document.getElementById(parent).appendChild(btn);
@@ -139,11 +160,20 @@
           document.getElementById("questionText").innerText = "This is an audio question";
         }
 
+        currentPoints = msg.points;
         document.getElementById("questionAnswer").innerText = msg.answer;
 
       } else if (msg.action === "PlayerAdd") {
-        AddPlayer("playerPlus", msg.user, msg.content, " +");
-        AddPlayer("playerMinus", msg.user, "-" + msg.content, " -");
+        AddPlayer("playerPlus", msg.user, " +", 1);
+        AddPlayer("playerMinus", msg.user, " -", "-" + msg.divisor);
+      } else if (msg.action === "PlayerReady") {
+        const p = document.createElement("p");
+        p.style.color = "white";
+        p.style.fontSize = "2vw";
+        p.innerText = msg.user;
+        document.getElementById("playerReady").appendChild(p);
+      } else if (msg.action === "SetDenom") {
+        commonDenom = msg.points;
       }
     }
   </script>

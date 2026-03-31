@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 public abstract class Question
@@ -113,6 +112,7 @@ public class ImageQuestion : Question
 
 		GameObject image = GameObject.Find("ImageQuestion").transform.Find("Mask").gameObject;
 		image.transform.Find("QuestionImage").GetComponent<RawImage>().texture = Texture;
+		image.transform.Find("QuestionImage").GetComponent <AspectRatioFitter>().aspectRatio = (float)Texture.width / Texture.height;
 		GameManager.Instance.ShowImage(image, this);
 	}
 	public override void Stop()
@@ -159,9 +159,13 @@ public class AudioQuestion : Question
 	{
 		AudioSource audioSource = GameObject.Find("AudioQuestion").GetComponent<AudioSource>();
 		if (isPaused)
+		{
 			audioSource.UnPause();
+			isPaused = false;
+		}
 		else
 		{
+			audioSource.Stop();
 			audioSource.clip = AudioClip;
 			audioSource.Play();
 		}
@@ -182,6 +186,8 @@ public class AudioQuestion : Question
 
 		GameObject.Find("AudioCamera").GetComponent<Camera>().enabled = false;
 		GameObject.Find("MainCamera").GetComponent<Camera>().enabled = true;
+
+		GameObject.Find("AudioQuestion").GetComponent<AudioSource>().Stop();
 	}
 }
 
