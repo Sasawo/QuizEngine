@@ -401,40 +401,40 @@
         {
             "categories": [
                 {
-                    "name": "Pieseň sirény",
-                    "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                    "answer": "Yep, it displayed correctly.",
-                    "type": "Text",
+                    "name": "Štúdiový zvuk",
+                    "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/WarnerBros.mp3",
+                    "answer": "Warner Bros. Pictures",
+                    "type": "Audio",
                     "points": "3000",
                     "questions": [
                         {
-                            "content": "This is a text question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly.",
-                            "type": "Text",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/Paramount.mp3",
+                            "answer": "Paramount Pictures",
+                            "type": "Audio",
                             "points": "1000"
                         },
                         {
-                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/image.jpg",
-                            "answer": "Yep, it displayed correctly.",
-                            "type": "Image",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/Disney.mp3",
+                            "answer": "Walt Disney Studios",
+                            "type": "Audio",
                             "points": "2000"
                         },
                         {
-                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/audio.mp3",
-                            "answer": "Yep, it displayed correctly.",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/Marvel.mp3",
+                            "answer": "Marvel Studios",
                             "type": "Audio",
                             "points": "3000"
                         },
                         {
-                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly.",
-                            "type": "Text",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/Universal.mp3",
+                            "answer": "Universal Pictures",
+                            "type": "Audio",
                             "points": "4000"
                         },
                         {
-                            "content": "This is a question, which is kinda long, so I can check how it displays. Will it display correctly?",
-                            "answer": "Yep, it displayed correctly.",
-                            "type": "Text",
+                            "content": "C:/Users/sawas/OneDrive/Desktop/Folders/Resources/Repositories/QuizEngine/FirstQuiz/Studiovy_zvuk/20CenturyFox.mp3",
+                            "answer": "20th Century Fox",
+                            "type": "Audio",
                             "points": "5000"
                         }
                     ]

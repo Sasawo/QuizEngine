@@ -83,4 +83,9 @@ public class GameplayManager : MonoBehaviour
 
 		Continue = false;
 	}
+
+	public void Stop(Coroutine c)
+	{
+		StopCoroutine(c);
+	}
 }

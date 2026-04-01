@@ -21,7 +21,7 @@
     <p class="center" id="wrongName" style="color:red;display:block;font-size:2vw;visibility:hidden;">Selected name is invalid</p>
   </form>
   <script>
-    let ws = new WebSocket("ws://192.168.100.37:61154/actions");
+    let ws = new WebSocket("ws://192.168.100.37:65248/actions");
     let playerName = null;
 	
     ws.onopen = () => console.log("Connected!");

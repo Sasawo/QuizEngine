@@ -81,7 +81,7 @@ public class TextQuestion : Question
 public class ImageQuestion : Question
 {
 	public Texture2D Texture;
-	public Coroutine Coroutine;
+	public Coroutine Coroutine = null;
 	public bool CoroutinePaused = false;
 	public ImageQuestion(string content, string answer, int pts) : base(content, answer, pts)
 	{
@@ -104,7 +104,7 @@ public class ImageQuestion : Question
 	}
 	public override void Show()
 	{
-		if (CoroutinePaused)
+		if (CoroutinePaused || Coroutine != null)
 		{
 			CoroutinePaused = false;
 			return;
@@ -130,6 +130,9 @@ public class ImageQuestion : Question
 
 		GameObject.Find("ImageCamera").GetComponent<Camera>().enabled = false;
 		GameObject.Find("MainCamera").GetComponent<Camera>().enabled = true;
+
+		GameplayManager.Instance.Stop(Coroutine);
+		Coroutine = null;
 	}
 }
 
